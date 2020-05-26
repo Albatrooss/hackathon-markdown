@@ -32,6 +32,11 @@ nav {
     left: 1vh;
     font-size: 3vh;
     z-index: 1;
+    transition: left .45s ease-in;
+}
+#menu-btn.menu-clicked {
+    left: 23vw;
+    transition: left .25s ease-out;
 }
 main {
     display: flex;
@@ -93,27 +98,17 @@ ul {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
 }
-#option-01,
-#option-02,
-#option-03 {
-    width: 90%;
-    height: 10vh;
+li {
+    width: 100%;
 }
-.style-01 {
-    background-color: wheat;
-    color: thistle;
-    font-size: 3em;
+select {
+    background-color: #fff;
 }
-.style-02 {
-    background-color: antiquewhite;
-    color:
-    font-size: 3em;
-}
-.style-03 {
-    background-color: wheat;
-    color: thistle;
-    font-size: 3em;
+
+input:focus {
+    outline: none;
 }
 
 footer {
@@ -144,6 +139,6 @@ footer {
         width: 46%;
     }
     #menu.visible {
-        width: 50vw;
+        width: 25vw;
     }
 }
