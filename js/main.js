@@ -1,4 +1,9 @@
+const markConvert = new showdown.Converter();
+
 let menuShowing = false;
+let mobile = window.innerWidth < 1000 ? true : false;
+
+/*------ DOM ELEMENTS ------*/
 
 const myOutput = document.getElementById('output');
 const myInput = document.getElementById('input');
@@ -8,12 +13,14 @@ const menuBtn = document.getElementById('menu-btn');
 const bgColor = document.getElementById('input-background-color');
 const fontColor = document.getElementById('input-font-color');
 
-const markConvert = new showdown.Converter();
+/*------ EVENT LISTENERS ------*/
 
 input.addEventListener('input', convert);
 menuBtn.addEventListener('click', toggleMenu);
 menu.addEventListener('input', updateStyle);
 // bgColor.addEventListener('keydown', updateStyle);
+
+/*------ FUNCTIONS ------*/
 
 function convert() {
   let text = input.value;
@@ -27,7 +34,8 @@ function toggleMenu() {
     menuBtn.classList.toggle('menu-clicked');
     menuShowing = false;
   } else {
-    setTimeout(() => menuBtn.classList.toggle('menu-clicked'), 250);
+    let timeout = mobile ? 50 : 200;
+    setTimeout(() => menuBtn.classList.toggle('menu-clicked'), timeout);
     menuShowing = true;
   }
 }

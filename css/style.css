@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300&family=Sigmar+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@900&family=Heebo:wght@300&family=Luckiest+Guy&family=Sigmar+One&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -7,21 +7,19 @@
 *::-webkit-scrollbar {
     display: none;
 }
-/* #output::-webkit-scrollbar-track,
-textarea::-webkit-scrollbar-track {
-    border-radius: 5px;
-} */
+
 nav {
     height: 5vh;
     width: 100%;
-    background-color: indigo;
+    background-color: #272635;
     color: #fff;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-family: 'Sigmar One', cursive;
-    font-size: 0.75em;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 3vh;
+    padding-top: 10px;
 }
 #menu-btn:hover {
     font-size: 4vh;
@@ -35,15 +33,15 @@ nav {
     transition: left .45s ease-in;
 }
 #menu-btn.menu-clicked {
-    left: 23vw;
-    transition: left .25s ease-out;
+    left: 90vw;
+    transition: left .425s;
 }
 main {
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 95vh;
-    background-color: rgb(139, 106, 163);
+    background-color: #B1E5F2;
     font-family: 'Heebo', sans-serif;
 }
 #output {
@@ -69,6 +67,7 @@ textarea {
     height: 13vh;
     width: 98vw;
     margin: 1vh 1vw;
+    background-color: #ddd;
     border: none;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -89,19 +88,27 @@ textarea {
 }
 #menu.visible {
     left: 0;
-    transition: left .5s ease-out;
+    transition: left .5s;
 }
 ul {
-    height: 100%;
+    height: 75%;
     padding: 10vmin;
     list-style: none;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    font-family: 'Exo', cursive;
 }
 li {
     width: 100%;
+    color: #ccc;
+}
+li input {
+    font-family: 'Heebo', sans-serif;
+}
+select:focus {
+    outline: none;
 }
 select {
     background-color: #fff;
@@ -110,7 +117,16 @@ select {
 input:focus {
     outline: none;
 }
-
+#menu p {
+    color: #ccc;
+    margin: 5vh 0;
+    margin-left: 10vmin;
+}
+#menu a {
+    color: #fff;
+    display: block;
+    text-align: center;
+}
 footer {
     height: 10vh;
     width: 100%;
@@ -123,7 +139,11 @@ footer {
 
 @media only screen and (min-width: 1025px) {
     nav {
-        font-size: 1.5em;
+        font-size: 4vh;
+    }
+    #menu-btn.menu-clicked {
+        left: 23vw;
+        transition: left .3s ease-out;
     }
     main {
         flex-direction: row-reverse;
